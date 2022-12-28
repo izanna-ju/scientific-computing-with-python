@@ -27,11 +27,10 @@ def add_time(start, duration, *args):
         if total_hours > 12:
             total_hours = total_hours - ((t - 1) * 12)
 
-        if t > 0:
-            if meridiem == "PM":
-                future_day = ((t - 1) // 2) + 1
-            else:
-                future_day = t // 2
+        if meridiem == "PM":
+            future_day = ((t - 1) // 2) + 1
+        else:
+            future_day = t // 2
 
         if t > 0 and t % 2 != 0:
             meridiem = "AM" if meridiem == "PM" else "PM"
